@@ -45,7 +45,7 @@ const  addStudent = async (req, res) =>{
 
 //3. get single student
 
-const getSingleStudent = async (req, res) => {
+const getStudentById = async (req, res) => {
     let id = req.params.id
     let student = await Student.findOne({where: {id: id}})
     res.status(200).send(student)
@@ -73,7 +73,7 @@ const deleteStudent = async (req, res) => {
 module.exports ={
     addStudent,
     getAllStudents,
-    getSingleStudent,
+    getStudentById,
     updateStudent,
     deleteStudent
 }
